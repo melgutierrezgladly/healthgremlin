@@ -1,0 +1,23 @@
+# Swift / SPM build artifacts
+.build/
+*.xcodeproj/xcuserdata/
+*.xcworkspace/
+DerivedData/
+
+# macOS system files
+.DS_Store
+**/.DS_Store
+
+# Xcode
+*.pbxuser
+*.mode1v3
+*.mode2v3
+*.perspectivev3
+*.xcuserstate
+xcuserdata/
+
+# App bundles (built locally)
+*.app
+
+# Claude Code
+.claude/

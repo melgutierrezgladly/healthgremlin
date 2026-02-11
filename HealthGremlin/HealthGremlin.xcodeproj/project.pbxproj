@@ -1,0 +1,263 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A1B2C3D4E5F6A1B2C3D4E611 /* HealthGremlinApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F6A1B2C3D4E610; };
+		A1B2C3D4E5F6A1B2C3D4E613 /* MenuBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F6A1B2C3D4E612; };
+		A1B2C3D4E5F6A1B2C3D4E615 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F6A1B2C3D4E614; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		A1B2C3D4E5F6A1B2C3D4E610 /* HealthGremlinApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthGremlinApp.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F6A1B2C3D4E612 /* MenuBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBarView.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F6A1B2C3D4E614 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A1B2C3D4E5F6A1B2C3D4E616 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A1B2C3D4E5F6A1B2C3D4E621 /* HealthGremlin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HealthGremlin.app; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A1B2C3D4E5F6A1B2C3D4E632 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A1B2C3D4E5F6A1B2C3D4E5F7 = {
+			isa = PBXGroup;
+			children = (
+				A1B2C3D4E5F6A1B2C3D4E5F8 /* HealthGremlin */,
+				A1B2C3D4E5F6A1B2C3D4E650 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A1B2C3D4E5F6A1B2C3D4E650 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A1B2C3D4E5F6A1B2C3D4E621 /* HealthGremlin.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A1B2C3D4E5F6A1B2C3D4E5F8 /* HealthGremlin */ = {
+			isa = PBXGroup;
+			children = (
+				A1B2C3D4E5F6A1B2C3D4E610 /* HealthGremlinApp.swift */,
+				A1B2C3D4E5F6A1B2C3D4E600 /* Views */,
+				A1B2C3D4E5F6A1B2C3D4E602 /* Models */,
+				A1B2C3D4E5F6A1B2C3D4E601 /* Resources */,
+				A1B2C3D4E5F6A1B2C3D4E603 /* Utilities */,
+				A1B2C3D4E5F6A1B2C3D4E616 /* Info.plist */,
+			);
+			path = HealthGremlin;
+			sourceTree = "<group>";
+		};
+		A1B2C3D4E5F6A1B2C3D4E600 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A1B2C3D4E5F6A1B2C3D4E612 /* MenuBarView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A1B2C3D4E5F6A1B2C3D4E602 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A1B2C3D4E5F6A1B2C3D4E601 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A1B2C3D4E5F6A1B2C3D4E614 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		A1B2C3D4E5F6A1B2C3D4E603 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A1B2C3D4E5F6A1B2C3D4E620 /* HealthGremlin */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A1B2C3D4E5F6A1B2C3D4E643 /* Build configuration list for PBXNativeTarget "HealthGremlin" */;
+			buildPhases = (
+				A1B2C3D4E5F6A1B2C3D4E630 /* Sources */,
+				A1B2C3D4E5F6A1B2C3D4E632 /* Frameworks */,
+				A1B2C3D4E5F6A1B2C3D4E631 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HealthGremlin;
+			productName = HealthGremlin;
+			productReference = A1B2C3D4E5F6A1B2C3D4E621 /* HealthGremlin.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A1B2C3D4E5F6A1B2C3D4E5F6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+			};
+			buildConfigurationList = A1B2C3D4E5F6A1B2C3D4E640 /* Build configuration list for PBXProject "HealthGremlin" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A1B2C3D4E5F6A1B2C3D4E5F7;
+			productRefGroup = A1B2C3D4E5F6A1B2C3D4E650 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A1B2C3D4E5F6A1B2C3D4E620 /* HealthGremlin */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A1B2C3D4E5F6A1B2C3D4E631 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1B2C3D4E5F6A1B2C3D4E615 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A1B2C3D4E5F6A1B2C3D4E630 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1B2C3D4E5F6A1B2C3D4E611 /* HealthGremlinApp.swift in Sources */,
+				A1B2C3D4E5F6A1B2C3D4E613 /* MenuBarView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		A1B2C3D4E5F6A1B2C3D4E641 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A1B2C3D4E5F6A1B2C3D4E642 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		A1B2C3D4E5F6A1B2C3D4E644 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				INFOPLIST_FILE = HealthGremlin/Info.plist;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.healthgremlin.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		A1B2C3D4E5F6A1B2C3D4E645 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				INFOPLIST_FILE = HealthGremlin/Info.plist;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.healthgremlin.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A1B2C3D4E5F6A1B2C3D4E640 /* Build configuration list for PBXProject "HealthGremlin" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A1B2C3D4E5F6A1B2C3D4E641 /* Debug */,
+				A1B2C3D4E5F6A1B2C3D4E642 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A1B2C3D4E5F6A1B2C3D4E643 /* Build configuration list for PBXNativeTarget "HealthGremlin" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A1B2C3D4E5F6A1B2C3D4E644 /* Debug */,
+				A1B2C3D4E5F6A1B2C3D4E645 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+	};
+	rootObject = A1B2C3D4E5F6A1B2C3D4E5F6 /* Project object */;
+}

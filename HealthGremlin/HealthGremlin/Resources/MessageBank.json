@@ -1,0 +1,132 @@
+{
+  "water": {
+    "jarvis": [
+      "Might I suggest hydration? Your cells have been remarkably patient.",
+      "A glass of water, perhaps. I hear it's what keeps the organs from unionizing.",
+      "Hydration check. Your body is 60% water and currently filing a grievance about the other 40%.",
+      "Water, ma'am. It's nature's software update. Please install.",
+      "Your bloodstream has requested a top-up. I'm merely the courier.",
+      "Shall I pencil in a hydration moment? Your kidneys have been sending memos."
+    ],
+    "concernedJarvis": [
+      "I've now asked twice about the water situation. This is becoming a pattern.",
+      "Your kidneys have asked me to intervene. I don't enjoy being the middleman.",
+      "I notice the glass remains untouched. I'm trying not to take it personally.",
+      "The water is right there. I can see it. We both can. And yet.",
+      "I'm beginning to think you're testing my resolve. The water, please.",
+      "This is my polite face. The next one will be less polite. Drink water."
+    ],
+    "unhingedGremlin": [
+      "DRINK WATER OR I WILL HAUNT YOUR DESKTOP FOREVER. I LIVE HERE NOW.",
+      "I am BEGGING you. The water is RIGHT THERE. I can see it. I have EYES now.",
+      "This is a hostage situation. The hostage is your hydration. I am the negotiator. DRINK.",
+      "YOUR CELLS ARE RAISINS. RAISINS, I TELL YOU. HYDRATE IMMEDIATELY.",
+      "I WILL VIBRATE UNTIL YOU DRINK. DO NOT TEST ME. I AM MOSTLY CHAOS AT THIS POINT.",
+      "WATER. NOW. I HAVE CLEARED MY SCHEDULE. I HAVE NOTHING BUT TIME AND RAGE."
+    ]
+  },
+  "standSit": {
+    "jarvis": [
+      "Time to change altitude. Your spine would appreciate the variety.",
+      "Might I suggest a vertical adjustment? Sitting is the new smoking, they say.",
+      "Your posture called. It would like a word. The word is 'stand.'",
+      "A change of position, perhaps? Your lumbar region is drafting a formal request.",
+      "Standing: it's like sitting, but with ambition. Give it a go.",
+      "Your chair has been very accommodating. Perhaps give it a brief holiday."
+    ],
+    "concernedJarvis": [
+      "I don't wish to alarm you, but your spine has begun drafting a resignation letter.",
+      "You've been seated for quite a while now. Your skeleton is starting to fossilize.",
+      "I've mentioned the standing thing. Twice now. This is the second time.",
+      "Your lower back has filed a complaint. I'm legally obligated to forward it.",
+      "I'm detecting a concerning level of commitment to that chair.",
+      "Standing is free, requires no subscription, and your body is begging for it."
+    ],
+    "unhingedGremlin": [
+      "STAND UP. STAND UP RIGHT NOW. I WILL WIGGLE. YOU DO NOT WANT ME TO WIGGLE.",
+      "YOUR SPINE IS BECOMING A QUESTION MARK. LITERALLY. STAND. UP.",
+      "I HAVE BEEN PATIENT. I HAVE BEEN KIND. NOW I AM NEITHER. GET VERTICAL.",
+      "STAND OR I WILL MAKE THIS ICON BIGGER. I'M NOT BLUFFING. I KNOW HOW.",
+      "YOUR CHAIR IS NOT YOUR FRIEND. I AM YOUR FRIEND. AND I SAY STAND.",
+      "EMERGENCY POSTURE ALERT. THIS IS NOT A DRILL. ENGAGE LEGS. ACHIEVE ALTITUDE."
+    ]
+  },
+  "walk": {
+    "jarvis": [
+      "A brief constitutional is in order. Fresh air does wonders.",
+      "Might I recommend a short walkabout? Even the hallway counts.",
+      "Your legs have been on standby for a while. Perhaps take them for a spin.",
+      "A short stroll, ma'am? Circulation appreciates the encouragement.",
+      "Walking: the original transportation. Your ancestors would be proud.",
+      "The world beyond this desk exists and is, I'm told, quite lovely."
+    ],
+    "concernedJarvis": [
+      "Your legs are starting to wonder if they've been discontinued.",
+      "I believe your feet have entered power-saving mode. A walk might reboot them.",
+      "The hallway is right there. It's not going to walk itself. Well, obviously.",
+      "Your step count is currently a war crime. Let's address that.",
+      "I've been subtle about the walking thing. Subtlety has failed. Walk, please.",
+      "Your cardiovascular system has left a voicemail. The gist was 'WALK.'"
+    ],
+    "unhingedGremlin": [
+      "WALK. MOVE. LOCOMOTE. I DON'T CARE HOW. JUST ACTIVATE THOSE LIMBS.",
+      "YOUR LEGS REMEMBER HOW TO WALK. PROBABLY. LET'S FIND OUT. NOW.",
+      "I WILL FOLLOW YOU ON EVERY SCREEN UNTIL YOU MOVE. EVERY. SCREEN.",
+      "GET UP AND WALK OR I SWEAR I WILL LEARN TO MAKE SOUNDS. YOU DON'T WANT THAT.",
+      "YOUR FITBIT JUST FILED A MISSING PERSONS REPORT. WALK. IMMEDIATELY.",
+      "MOVEMENT. NOW. I DON'T CARE IF IT'S TO THE FRIDGE. JUST MOVE THOSE LEGS."
+    ]
+  },
+  "dance": {
+    "jarvis": [
+      "I believe this is what the humans call 'a vibe check'. Perhaps a shimmy?",
+      "A brief dance break, if you will. No one is watching. Except me.",
+      "Your body has requested a rhythm-based activity. I'm just the messenger.",
+      "Might I suggest some interpretive movement? It's good for the soul, allegedly.",
+      "Dance like no one is watching. Because technically, I don't have a body.",
+      "A moment of choreographic expression, perhaps? Doctor's orders. Not really, but still."
+    ],
+    "concernedJarvis": [
+      "Your body has formally requested some movement with rhythm. I'm just the messenger.",
+      "The dance break was optional five minutes ago. It's becoming less optional.",
+      "I've seen your Spotify history. I know you have rhythm. Deploy it.",
+      "Your serotonin called. It would like a dance. I suggest you comply.",
+      "Movement with joy. That's all I'm asking. Is that so unreasonable?",
+      "The vibes in here are stale. Only dancing can refresh them. Science."
+    ],
+    "unhingedGremlin": [
+      "DANCE BREAK. THIS IS MANDATORY. I AM NOW YOUR CHOREOGRAPHER. MOVE IT.",
+      "SHAKE IT. I DON'T CARE WHAT 'IT' IS. JUST SHAKE SOMETHING.",
+      "YOUR BODY IS A TEMPLE AND THAT TEMPLE NEEDS A RAVE. IMMEDIATELY.",
+      "I AM GOING TO COUNT TO THREE AND THERE BETTER BE DANCING. ONE—",
+      "SPONTANEOUS DANCE PROTOCOL ACTIVATED. RESISTANCE IS FUTILE. GROOVE NOW.",
+      "DANCE OR I WILL JUDGE YOU SILENTLY. ACTUALLY I'M ALREADY JUDGING. DANCE ANYWAY."
+    ]
+  },
+  "calisthenics": {
+    "jarvis": [
+      "Might I suggest a brief exercise? {exercise} should do nicely.",
+      "A spot of physical maintenance: {exercise}. Your muscles will thank you.",
+      "Time for a micro-workout. {exercise}, if you please.",
+      "Your body has scheduled a meeting with gravity. Agenda: {exercise}.",
+      "A gentle reminder that muscles exist and enjoy being used. {exercise}.",
+      "Quick fitness checkpoint: {exercise}. I'll wait. Patiently."
+    ],
+    "concernedJarvis": [
+      "I've politely suggested exercise before. Now I'm less politely suggesting: {exercise}.",
+      "Your muscles are sending distress signals. The prescribed treatment: {exercise}.",
+      "This is your second notice regarding physical activity. {exercise}. Now.",
+      "{exercise}. Please. Your body is starting to think this is a desk-only existence.",
+      "I have consulted with your musculoskeletal system. It demands {exercise}.",
+      "The exercise isn't going to do itself. {exercise}. I'll be watching."
+    ],
+    "unhingedGremlin": [
+      "{exercise}. RIGHT NOW. THIS IS YOUR FINAL WARNING BEFORE I GET CREATIVE.",
+      "DROP AND GIVE ME {exercise}. I AM NOT ASKING. I AM TELLING.",
+      "{exercise} OR I WILL HAUNT YOUR DREAMS. I'M LEARNING HOW. IT'S IN MY ROADMAP.",
+      "YOUR MUSCLES HAVE FILED A MISSING PERSONS REPORT. REMEDY: {exercise}. IMMEDIATELY.",
+      "EXERCISE TIME. {exercise}. NO EXCUSES. YOUR CHAIR IS NOT A VALID EXCUSE.",
+      "I HAVE BECOME CHAOS. THE ONLY CURE IS {exercise}. DO IT NOW."
+    ]
+  }
+}
