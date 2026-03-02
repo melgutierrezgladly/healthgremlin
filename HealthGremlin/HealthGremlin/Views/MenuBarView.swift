@@ -20,6 +20,12 @@ struct MenuBarView: View {
                 .foregroundColor(.orange)
         }
 
+        if UserDefaults.standard.bool(forKey: "coworkingMode") {
+            Text("🏢 Coworking Mode")
+                .font(.caption)
+                .foregroundColor(.blue)
+        }
+
         Divider()
 
         // --- Pause/Resume ---
@@ -63,9 +69,11 @@ struct MenuBarView: View {
             Button("💃 Dance") {
                 timerCoordinator.startDemo(category: .dance)
             }
+            .disabled(!ReminderCategory.dance.isCurrentlyActive)
             Button("💪 Calisthenics") {
                 timerCoordinator.startDemo(category: .calisthenics)
             }
+            .disabled(!ReminderCategory.calisthenics.isCurrentlyActive)
         }
         .disabled(timerCoordinator.inDemoMode || WindowManager.shared.isShowingReminder)
 
@@ -110,7 +118,7 @@ struct MenuBarView: View {
         let hostingView = NSHostingView(rootView: settingsView)
 
         let window = NSWindow(
-            contentRect: NSRect(x: 0, y: 0, width: 400, height: 620),
+            contentRect: NSRect(x: 0, y: 0, width: 400, height: 720),
             styleMask: [.titled, .closable],
             backing: .buffered,
             defer: false

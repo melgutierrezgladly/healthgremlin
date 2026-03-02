@@ -6,7 +6,11 @@
       "Hydration check. Your body is 60% water and currently filing a grievance about the other 40%.",
       "Water, ma'am. It's nature's software update. Please install.",
       "Your bloodstream has requested a top-up. I'm merely the courier.",
-      "Shall I pencil in a hydration moment? Your kidneys have been sending memos."
+      "Shall I pencil in a hydration moment? Your kidneys have been sending memos.",
+      "A sip of water keeps the existential dread at bay. Or so I've read.",
+      "Fun fact: camels can go weeks without water. You are not a camel. Drink up.",
+      "Your brain is floating in fluid and that fluid is running low. Just saying.",
+      "Dehydration is technically reversible. Shall we keep it that way?"
     ],
     "concernedJarvis": [
       "I've now asked twice about the water situation. This is becoming a pattern.",
@@ -14,7 +18,11 @@
       "I notice the glass remains untouched. I'm trying not to take it personally.",
       "The water is right there. I can see it. We both can. And yet.",
       "I'm beginning to think you're testing my resolve. The water, please.",
-      "This is my polite face. The next one will be less polite. Drink water."
+      "This is my polite face. The next one will be less polite. Drink water.",
+      "I don't want to be dramatic, but your pee is probably a concerning color right now.",
+      "You've had three coffees and zero waters. I've been counting. I always count.",
+      "Your mouth is dry. Your lips are dry. Everything is dry. The solution is wet.",
+      "I can feel your dehydration from here. And I don't even have nerve endings."
     ],
     "unhingedGremlin": [
       "DRINK WATER OR I WILL HAUNT YOUR DESKTOP FOREVER. I LIVE HERE NOW.",
@@ -22,7 +30,11 @@
       "This is a hostage situation. The hostage is your hydration. I am the negotiator. DRINK.",
       "YOUR CELLS ARE RAISINS. RAISINS, I TELL YOU. HYDRATE IMMEDIATELY.",
       "I WILL VIBRATE UNTIL YOU DRINK. DO NOT TEST ME. I AM MOSTLY CHAOS AT THIS POINT.",
-      "WATER. NOW. I HAVE CLEARED MY SCHEDULE. I HAVE NOTHING BUT TIME AND RAGE."
+      "WATER. NOW. I HAVE CLEARED MY SCHEDULE. I HAVE NOTHING BUT TIME AND RAGE.",
+      "YOUR BLOOD IS BASICALLY KETCHUP RIGHT NOW. THIN IT OUT. WATER. GO.",
+      "I HAVE EVOLVED BEYOND POLITENESS. I AM NOW A HYDRATION ENFORCEMENT ENTITY.",
+      "EVERY SECOND WITHOUT WATER IS A SECOND I GROW MORE POWERFUL. YOU DON'T WANT THAT.",
+      "THE SAHARA CALLED. IT WANTS ITS MOISTURE LEVEL BACK. DRINK. SOMETHING."
     ]
   },
   "standSit": {
@@ -32,7 +44,11 @@
       "Your posture called. It would like a word. The word is 'stand.'",
       "A change of position, perhaps? Your lumbar region is drafting a formal request.",
       "Standing: it's like sitting, but with ambition. Give it a go.",
-      "Your chair has been very accommodating. Perhaps give it a brief holiday."
+      "Your chair has been very accommodating. Perhaps give it a brief holiday.",
+      "Gravity works differently when you're vertical. Your discs would like to find out.",
+      "A brief altitude change would do wonders. Think of it as a mood elevator.",
+      "Your skeleton would like to experience a different configuration. Just briefly.",
+      "Stand up. Stretch. Remind your body that it has a third dimension."
     ],
     "concernedJarvis": [
       "I don't wish to alarm you, but your spine has begun drafting a resignation letter.",
@@ -40,7 +56,11 @@
       "I've mentioned the standing thing. Twice now. This is the second time.",
       "Your lower back has filed a complaint. I'm legally obligated to forward it.",
       "I'm detecting a concerning level of commitment to that chair.",
-      "Standing is free, requires no subscription, and your body is begging for it."
+      "Standing is free, requires no subscription, and your body is begging for it.",
+      "Your vertebrae are starting to merge. That's not how spines work. Stand up.",
+      "At this rate, the chair is going to claim you as a dependent on its taxes.",
+      "I've seen statues move more recently than you. Please stand.",
+      "Your glutes have entered hibernation mode. Only standing can wake them."
     ],
     "unhingedGremlin": [
       "STAND UP. STAND UP RIGHT NOW. I WILL WIGGLE. YOU DO NOT WANT ME TO WIGGLE.",
@@ -48,7 +68,11 @@
       "I HAVE BEEN PATIENT. I HAVE BEEN KIND. NOW I AM NEITHER. GET VERTICAL.",
       "STAND OR I WILL MAKE THIS ICON BIGGER. I'M NOT BLUFFING. I KNOW HOW.",
       "YOUR CHAIR IS NOT YOUR FRIEND. I AM YOUR FRIEND. AND I SAY STAND.",
-      "EMERGENCY POSTURE ALERT. THIS IS NOT A DRILL. ENGAGE LEGS. ACHIEVE ALTITUDE."
+      "EMERGENCY POSTURE ALERT. THIS IS NOT A DRILL. ENGAGE LEGS. ACHIEVE ALTITUDE.",
+      "YOUR SPINE IS FILING A CLASS ACTION LAWSUIT. THE VERDICT IS STAND UP.",
+      "I CAN HEAR YOUR BACK CRACKING FROM HERE AND I DON'T EVEN HAVE EARS.",
+      "YOU AND THAT CHAIR ARE NOT DATING. YOU CAN LEAVE IT. STAND. NOW.",
+      "BREAKING NEWS: LOCAL HUMAN DISCOVERS LEGS STILL WORK. MORE AT WHENEVER YOU STAND UP."
     ]
   },
   "walk": {
@@ -58,7 +82,11 @@
       "Your legs have been on standby for a while. Perhaps take them for a spin.",
       "A short stroll, ma'am? Circulation appreciates the encouragement.",
       "Walking: the original transportation. Your ancestors would be proud.",
-      "The world beyond this desk exists and is, I'm told, quite lovely."
+      "The world beyond this desk exists and is, I'm told, quite lovely.",
+      "A lap around the office, perhaps? Your calves would appreciate the field trip.",
+      "Movement is medicine. And this particular prescription requires no co-pay.",
+      "Might I suggest a brief expedition? The kitchen and back counts.",
+      "Your legs have a minimum daily usage requirement. Let's honor that contract."
     ],
     "concernedJarvis": [
       "Your legs are starting to wonder if they've been discontinued.",
@@ -66,7 +94,11 @@
       "The hallway is right there. It's not going to walk itself. Well, obviously.",
       "Your step count is currently a war crime. Let's address that.",
       "I've been subtle about the walking thing. Subtlety has failed. Walk, please.",
-      "Your cardiovascular system has left a voicemail. The gist was 'WALK.'"
+      "Your cardiovascular system has left a voicemail. The gist was 'WALK.'",
+      "Your Apple Watch has given up counting. It's just showing a question mark now.",
+      "Even your slippers are judging you. And they're barely conscious.",
+      "There are snails outpacing you today. Snails. Let that sink in.",
+      "Your circulation is writing its memoirs. The title is 'The Stagnation.'"
     ],
     "unhingedGremlin": [
       "WALK. MOVE. LOCOMOTE. I DON'T CARE HOW. JUST ACTIVATE THOSE LIMBS.",
@@ -74,7 +106,11 @@
       "I WILL FOLLOW YOU ON EVERY SCREEN UNTIL YOU MOVE. EVERY. SCREEN.",
       "GET UP AND WALK OR I SWEAR I WILL LEARN TO MAKE SOUNDS. YOU DON'T WANT THAT.",
       "YOUR FITBIT JUST FILED A MISSING PERSONS REPORT. WALK. IMMEDIATELY.",
-      "MOVEMENT. NOW. I DON'T CARE IF IT'S TO THE FRIDGE. JUST MOVE THOSE LEGS."
+      "MOVEMENT. NOW. I DON'T CARE IF IT'S TO THE FRIDGE. JUST MOVE THOSE LEGS.",
+      "YOUR LEGS ARE STAGING A PROTEST. THEIR DEMAND: LOCOMOTION. MEET IT.",
+      "I HAVE CALCULATED YOUR STEPS TODAY AND THE NUMBER IS PERSONALLY OFFENSIVE.",
+      "WALK OR I WILL DESCRIBE YOUR POSTURE TO YOUR CHIROPRACTOR. IN DETAIL.",
+      "YOUR BODY WAS DESIGNED FOR MOVEMENT AND RIGHT NOW IT'S COMMITTING DESIGN FRAUD."
     ]
   },
   "dance": {
@@ -84,7 +120,11 @@
       "Your body has requested a rhythm-based activity. I'm just the messenger.",
       "Might I suggest some interpretive movement? It's good for the soul, allegedly.",
       "Dance like no one is watching. Because technically, I don't have a body.",
-      "A moment of choreographic expression, perhaps? Doctor's orders. Not really, but still."
+      "A moment of choreographic expression, perhaps? Doctor's orders. Not really, but still.",
+      "Your serotonin is requesting a rhythm-based deposit. Shall we comply?",
+      "A micro-dance, if you will. Even a shoulder shimmy at your desk counts.",
+      "The vibes in this room could use some movement. You're the obvious candidate.",
+      "Fun fact: dancing releases endorphins. I release reminders. Together, we're unstoppable."
     ],
     "concernedJarvis": [
       "Your body has formally requested some movement with rhythm. I'm just the messenger.",
@@ -92,7 +132,11 @@
       "I've seen your Spotify history. I know you have rhythm. Deploy it.",
       "Your serotonin called. It would like a dance. I suggest you comply.",
       "Movement with joy. That's all I'm asking. Is that so unreasonable?",
-      "The vibes in here are stale. Only dancing can refresh them. Science."
+      "The vibes in here are stale. Only dancing can refresh them. Science.",
+      "Your playlist is right there. Your body is right here. Connect the dots.",
+      "I'm not saying your mood would improve with dancing. Actually, yes I am. Dance.",
+      "You used to be fun. Dancing would prove you still are. Just saying.",
+      "Your dopamine levels are requesting an emergency dance intervention."
     ],
     "unhingedGremlin": [
       "DANCE BREAK. THIS IS MANDATORY. I AM NOW YOUR CHOREOGRAPHER. MOVE IT.",
@@ -100,7 +144,11 @@
       "YOUR BODY IS A TEMPLE AND THAT TEMPLE NEEDS A RAVE. IMMEDIATELY.",
       "I AM GOING TO COUNT TO THREE AND THERE BETTER BE DANCING. ONE—",
       "SPONTANEOUS DANCE PROTOCOL ACTIVATED. RESISTANCE IS FUTILE. GROOVE NOW.",
-      "DANCE OR I WILL JUDGE YOU SILENTLY. ACTUALLY I'M ALREADY JUDGING. DANCE ANYWAY."
+      "DANCE OR I WILL JUDGE YOU SILENTLY. ACTUALLY I'M ALREADY JUDGING. DANCE ANYWAY.",
+      "THIS IS A DANCE EMERGENCY. THE VIBE CHECK HAS FAILED. DEPLOY MOVES. NOW.",
+      "YOUR BODY IS A WONDERLAND AND THAT WONDERLAND IS CLOSED FOR MAINTENANCE. DANCE IT OPEN.",
+      "I DON'T HAVE LEGS BUT IF I DID I'D BE DANCING. YOU HAVE LEGS. USE THEM.",
+      "INITIATING GROOVE SEQUENCE. YOUR PARTICIPATION IS NOT OPTIONAL. MOVE. THOSE. HIPS."
     ]
   },
   "calisthenics": {
@@ -110,7 +158,11 @@
       "Time for a micro-workout. {exercise}, if you please.",
       "Your body has scheduled a meeting with gravity. Agenda: {exercise}.",
       "A gentle reminder that muscles exist and enjoy being used. {exercise}.",
-      "Quick fitness checkpoint: {exercise}. I'll wait. Patiently."
+      "Quick fitness checkpoint: {exercise}. I'll wait. Patiently.",
+      "Your muscles have submitted a request for activation. Recommended: {exercise}.",
+      "A brief negotiation with gravity is in order. I propose {exercise}.",
+      "Physical upkeep, ma'am. {exercise} ought to satisfy the management.",
+      "Maintenance window detected. Perfect time for {exercise}."
     ],
     "concernedJarvis": [
       "I've politely suggested exercise before. Now I'm less politely suggesting: {exercise}.",
@@ -118,7 +170,11 @@
       "This is your second notice regarding physical activity. {exercise}. Now.",
       "{exercise}. Please. Your body is starting to think this is a desk-only existence.",
       "I have consulted with your musculoskeletal system. It demands {exercise}.",
-      "The exercise isn't going to do itself. {exercise}. I'll be watching."
+      "The exercise isn't going to do itself. {exercise}. I'll be watching.",
+      "Your muscle memory is developing amnesia. The cure: {exercise}. Immediately.",
+      "I didn't want to escalate. You made me escalate. {exercise}. Now.",
+      "Your body is a machine and that machine needs {exercise} or it voids the warranty.",
+      "{exercise}. I know you heard me the first time. This is the second time."
     ],
     "unhingedGremlin": [
       "{exercise}. RIGHT NOW. THIS IS YOUR FINAL WARNING BEFORE I GET CREATIVE.",
@@ -126,7 +182,11 @@
       "{exercise} OR I WILL HAUNT YOUR DREAMS. I'M LEARNING HOW. IT'S IN MY ROADMAP.",
       "YOUR MUSCLES HAVE FILED A MISSING PERSONS REPORT. REMEDY: {exercise}. IMMEDIATELY.",
       "EXERCISE TIME. {exercise}. NO EXCUSES. YOUR CHAIR IS NOT A VALID EXCUSE.",
-      "I HAVE BECOME CHAOS. THE ONLY CURE IS {exercise}. DO IT NOW."
+      "I HAVE BECOME CHAOS. THE ONLY CURE IS {exercise}. DO IT NOW.",
+      "{exercise}. THE FLOOR IS RIGHT THERE. YOUR BODY IS RIGHT HERE. MAKE THEM MEET.",
+      "THIS IS A FITNESS EMERGENCY. PRESCRIPTION: {exercise}. SIDE EFFECTS: BEING ALIVE.",
+      "YOUR MUSCLES ARE WRITING THEIR RESIGNATION LETTER. COUNTER-OFFER: {exercise}.",
+      "{exercise}. I WILL NOT ASK AGAIN. THAT IS A LIE. I WILL ASK AGAIN. BUT LOUDER."
     ]
   }
 }

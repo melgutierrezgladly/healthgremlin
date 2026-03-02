@@ -1,5 +1,22 @@
 import Foundation
 
+// MARK: - Calisthenics Difficulty
+// User-selectable difficulty level that determines which exercise pool is used.
+
+enum CalisthenicsDifficulty: String, CaseIterable {
+    case easy = "Easy"
+    case medium = "Medium"
+    case hard = "Hard"
+
+    var emoji: String {
+        switch self {
+        case .easy: return "🟢"
+        case .medium: return "🟡"
+        case .hard: return "🔴"
+        }
+    }
+}
+
 // MARK: - MessageBank
 // Loads and serves reminder messages from MessageBank.json.
 //
@@ -7,7 +24,8 @@ import Foundation
 // - Loads all messages from a bundled JSON file
 // - Random selection within category + tier
 // - No immediate repeats (tracks what was last shown per category)
-// - For calisthenics, fills in {exercise} placeholders with random exercises
+// - For calisthenics, fills in {exercise} placeholders with cycling exercises
+// - Exercises are grouped by difficulty level (Easy/Medium/Hard)
 
 class MessageBank {
     static let shared = MessageBank()
@@ -18,29 +36,54 @@ class MessageBank {
     // Tracks the last message shown per category to avoid immediate repeats
     private var lastShown: [String: String] = [:]
 
-    // MARK: - Calisthenics exercise pool
-    // Each entry is a string that can replace {exercise} in calisthenics messages
-    private let exercises: [String] = [
-        "5-10 pushups",
-        "10-15 squats",
-        "10-15 lunges (each leg)",
-        "a 20-30 second plank",
-        "15-20 calf raises",
-        "10 tricep dips (use your chair)",
-        "20 jumping jacks",
+    // MARK: - Calisthenics exercise pools by difficulty
+    private let exercisesByDifficulty: [CalisthenicsDifficulty: [String]] = [
+        .easy: [
+            "10 wall pushups",
+            "10 chair-assisted squats",
+            "15 calf raises",
+            "a 15-second desk stretch (arms overhead)",
+            "10 seated leg raises",
+            "10 shoulder rolls (each direction)",
+            "a 20-second standing side stretch (each side)",
+        ],
+        .medium: [
+            "5-10 pushups",
+            "10-15 squats",
+            "10-15 lunges (each leg)",
+            "a 20-30 second plank",
+            "15-20 calf raises",
+            "10 tricep dips (use your chair)",
+            "20 jumping jacks",
+        ],
+        .hard: [
+            "10 burpees",
+            "15 mountain climbers (each side)",
+            "10 jump squats",
+            "10 diamond pushups",
+            "a 45-second plank",
+            "10 pike pushups",
+            "15 tuck jumps",
+        ],
     ]
 
-    // Tier 3 gets burpees as "punishment" (per the spec!)
-    private let tier3Exercises: [String] = [
-        "5-10 pushups",
-        "10-15 squats",
-        "10-15 lunges (each leg)",
-        "a 20-30 second plank",
-        "10 BURPEES (yes, really)",
-        "15-20 calf raises",
-        "10 tricep dips (use your chair)",
-        "20 jumping jacks",
+    // Tier 3 adds one extra "punishment" exercise per difficulty
+    private let tier3BonusExercise: [CalisthenicsDifficulty: String] = [
+        .easy: "20 wall pushups FAST (no slacking!)",
+        .medium: "10 BURPEES (yes, really)",
+        .hard: "15 BURPEE-TO-TUCK-JUMPS (suffer beautifully)",
     ]
+
+    // MARK: - Exercise cycling index (persisted across launches)
+    private var exerciseIndex: Int {
+        get { UserDefaults.standard.integer(forKey: "calisthenicsExerciseIndex") }
+        set { UserDefaults.standard.set(newValue, forKey: "calisthenicsExerciseIndex") }
+    }
+
+    private var lastDifficulty: String {
+        get { UserDefaults.standard.string(forKey: "calisthenicsLastDifficulty") ?? "Medium" }
+        set { UserDefaults.standard.set(newValue, forKey: "calisthenicsLastDifficulty") }
+    }
 
     // MARK: - Initialization
 
@@ -114,10 +157,26 @@ class MessageBank {
         // Track what we showed
         lastShown[categoryKey] = message
 
-        // For calisthenics, replace {exercise} placeholder with a random exercise
+        // For calisthenics, replace {exercise} placeholder with the next exercise in the cycle
         if category == .calisthenics {
-            let exercisePool = (tier == .unhingedGremlin) ? tier3Exercises : exercises
-            let exercise = exercisePool.randomElement()!
+            let difficulty = currentDifficulty()
+
+            // Reset cycle if difficulty changed
+            if difficulty.rawValue != lastDifficulty {
+                exerciseIndex = 0
+                lastDifficulty = difficulty.rawValue
+            }
+
+            var exercisePool = exercisesByDifficulty[difficulty] ?? exercisesByDifficulty[.medium]!
+            if tier == .unhingedGremlin, let bonus = tier3BonusExercise[difficulty] {
+                exercisePool.append(bonus)
+            }
+
+            // Cycle through exercises sequentially
+            let index = exerciseIndex % exercisePool.count
+            let exercise = exercisePool[index]
+            exerciseIndex += 1
+
             message = message.replacingOccurrences(of: "{exercise}", with: exercise)
         }
 
@@ -144,6 +203,14 @@ class MessageBank {
         case .concernedJarvis: return "concernedJarvis"
         case .unhingedGremlin: return "unhingedGremlin"
         }
+    }
+
+    // MARK: - Difficulty helper
+
+    /// Reads the current calisthenics difficulty from UserDefaults
+    private func currentDifficulty() -> CalisthenicsDifficulty {
+        let raw = UserDefaults.standard.string(forKey: "calisthenicsDifficulty") ?? "Medium"
+        return CalisthenicsDifficulty(rawValue: raw) ?? .medium
     }
 
     // MARK: - Fallback messages (if JSON fails to load)

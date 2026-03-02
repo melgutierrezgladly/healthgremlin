@@ -43,7 +43,7 @@ struct ReminderOverlayView: View {
                 },
                 onNextTier: windowManager.onNextTier
             )
-            .frame(maxWidth: 220)
+            .frame(maxWidth: 240)
 
             // --- Gremlin character (right side) ---
             FloatingCharacterView(tier: tier)

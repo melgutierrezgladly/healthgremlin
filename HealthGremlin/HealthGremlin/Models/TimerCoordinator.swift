@@ -111,9 +111,10 @@ class TimerCoordinator: ObservableObject {
         }
     }
 
-    /// Starts (or restarts) timers for all categories
+    /// Starts (or restarts) timers for all active categories
     private func startAllCategoryTimers() {
         for category in ReminderCategory.allCases {
+            guard category.isCurrentlyActive else { continue }
             scheduleTimer(for: category)
         }
     }
@@ -138,6 +139,7 @@ class TimerCoordinator: ObservableObject {
         categoryTimers[category]?.invalidate()
 
         guard !isPaused else { return }
+        guard category.isCurrentlyActive else { return }
 
         // Calculate a random interval within the category's range
         let interval = TimeInterval.random(in: category.minimumInterval...category.maximumInterval)
@@ -158,6 +160,7 @@ class TimerCoordinator: ObservableObject {
     /// Called when a category's timer fires. Checks for minimum gap,
     /// then shows the reminder via WindowManager.
     private func fireReminder(for category: ReminderCategory) {
+        guard category.isCurrentlyActive else { return }
         guard !isPaused else {
             // If paused, reschedule for later
             scheduleTimer(for: category)
@@ -364,6 +367,25 @@ class TimerCoordinator: ObservableObject {
         scheduleTimer(for: category)
     }
 
+    // MARK: - Coworking Mode
+
+    /// Call when coworking mode changes to cancel/restart appropriate timers
+    func handleCoworkingModeChange() {
+        // Cancel timers for now-disabled categories
+        for category in ReminderCategory.allCases {
+            if !category.isCurrentlyActive {
+                categoryTimers[category]?.invalidate()
+                categoryTimers.removeValue(forKey: category)
+                escalationTiers[category] = .jarvis
+            }
+        }
+        // Start timers for any newly-enabled categories
+        if !isPaused && !inGracePeriod {
+            startAllCategoryTimers()
+        }
+        print("⏱ Coworking mode changed — timers updated")
+    }
+
     // MARK: - Demo Mode
     // Allows cycling through all 3 escalation tiers with real messages
     // and animations for recording a demo video.
@@ -383,6 +405,10 @@ class TimerCoordinator: ObservableObject {
     /// Start demo mode — shows the overlay at Tier 1 for the given category
     func startDemo(category: ReminderCategory) {
         guard !inDemoMode else { return }
+        guard category.isCurrentlyActive else {
+            print("🎬 Demo mode: \(category.rawValue) is disabled in coworking mode")
+            return
+        }
 
         print("🎬 Demo mode: Starting with \(category.rawValue)")
 

@@ -20,6 +20,8 @@ struct SettingsView: View {
     @AppStorage("characterPosition") private var characterPosition: String = "bottomRight"
     @AppStorage("launchAtLogin") private var launchAtLogin: Bool = false
     @AppStorage("debugMode") private var debugMode: Bool = false
+    @AppStorage("calisthenicsDifficulty") private var calisthenicsDifficulty: String = "Medium"
+    @AppStorage("coworkingMode") private var coworkingMode: Bool = false
 
     // MARK: - Custom hotkey configs
     // These are loaded from UserDefaults on appear and saved on Apply.
@@ -72,13 +74,33 @@ struct SettingsView: View {
                             range: 30...240,
                             step: 15
                         )
+                        .disabled(coworkingMode)
+                        .opacity(coworkingMode ? 0.5 : 1.0)
                         intervalSlider(
                             label: "💪 Calisthenics",
                             value: $calisthenicsInterval,
                             range: 30...240,
                             step: 15
                         )
+                        .disabled(coworkingMode)
+                        .opacity(coworkingMode ? 0.5 : 1.0)
                     }
+
+                    // --- Calisthenics Difficulty ---
+                    settingsSection("Calisthenics Difficulty") {
+                        Picker("Difficulty", selection: $calisthenicsDifficulty) {
+                            ForEach(CalisthenicsDifficulty.allCases, id: \.rawValue) { level in
+                                Text("\(level.emoji) \(level.rawValue)").tag(level.rawValue)
+                            }
+                        }
+                        .pickerStyle(.radioGroup)
+
+                        Text(difficultyDescription)
+                            .font(.caption)
+                            .foregroundColor(.secondary)
+                    }
+                    .disabled(coworkingMode)
+                    .opacity(coworkingMode ? 0.5 : 1.0)
 
                     // --- Character Position ---
                     settingsSection("Character Position") {
@@ -102,6 +124,18 @@ struct SettingsView: View {
                             .onChange(of: debugMode) { _, newValue in
                                 TimerCoordinator.shared.debugMode = newValue
                             }
+                    }
+
+                    // --- Coworking Mode ---
+                    settingsSection("Coworking Mode") {
+                        Toggle("🏢 Enable Coworking Mode", isOn: $coworkingMode)
+                            .onChange(of: coworkingMode) { _, _ in
+                                TimerCoordinator.shared.handleCoworkingModeChange()
+                            }
+
+                        Text("Disables dance and calisthenics reminders for shared workspaces. Only water, stand/sit, and walk reminders will fire.")
+                            .font(.caption)
+                            .foregroundColor(.secondary)
                     }
 
                     // --- Keyboard Shortcuts (Editable!) ---
@@ -142,7 +176,7 @@ struct SettingsView: View {
             }
             .padding()
         }
-        .frame(width: 400, height: 620)
+        .frame(width: 400, height: 720)
         .onAppear {
             loadHotkeyConfigs()
         }
@@ -172,6 +206,16 @@ struct SettingsView: View {
                     .frame(width: 55, alignment: .trailing)
                     .font(.system(.body, design: .monospaced))
             }
+        }
+    }
+
+    // MARK: - Difficulty description
+
+    private var difficultyDescription: String {
+        switch calisthenicsDifficulty {
+        case "Easy": return "Gentle: wall pushups, chair squats, calf raises, desk stretches"
+        case "Hard": return "Intense: burpees, mountain climbers, jump squats, pike pushups"
+        default: return "Standard: pushups, squats, lunges, planks, jumping jacks"
         }
     }
 

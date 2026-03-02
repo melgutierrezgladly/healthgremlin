@@ -48,11 +48,13 @@ struct SpeechBubbleView: View {
             }
 
             // --- Message text ---
-            Text(message)
-                .font(.system(size: 13))
-                .foregroundColor(.primary)
-                .lineLimit(4)
-                .fixedSize(horizontal: false, vertical: true)
+            ScrollView(.vertical, showsIndicators: false) {
+                Text(message)
+                    .font(.system(size: 13))
+                    .foregroundColor(.primary)
+                    .fixedSize(horizontal: false, vertical: true)
+            }
+            .frame(maxHeight: 100)
 
             // --- Action buttons ---
             if let onNextTier = onNextTier {

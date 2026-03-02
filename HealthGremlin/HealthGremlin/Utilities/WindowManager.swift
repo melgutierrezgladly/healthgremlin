@@ -88,8 +88,8 @@ class WindowManager: ObservableObject {
         // Calculate position based on user's preference (from Settings)
         guard let screen = NSScreen.main else { return }
         let screenFrame = screen.visibleFrame
-        let panelWidth: CGFloat = 320
-        let panelHeight: CGFloat = 200
+        let panelWidth: CGFloat = 340
+        let panelHeight: CGFloat = 260
         let padding: CGFloat = 20
 
         let position = UserDefaults.standard.string(forKey: "characterPosition") ?? "bottomRight"
@@ -202,8 +202,8 @@ class WindowManager: ObservableObject {
         panel.contentView = hostingView
 
         // Resize the panel to fit the content
-        let panelWidth: CGFloat = 320
-        let panelHeight: CGFloat = 220
+        let panelWidth: CGFloat = 340
+        let panelHeight: CGFloat = 260
         var frame = panel.frame
         frame.size = NSSize(width: panelWidth, height: panelHeight)
         panel.setFrame(frame, display: true)

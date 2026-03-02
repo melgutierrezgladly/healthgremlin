@@ -58,6 +58,22 @@ enum ReminderCategory: String, CaseIterable, Identifiable {
         return defaultInterval * 1.25
     }
 
+    /// Whether this category is disabled when coworking mode is active
+    var isDisabledInCoworkingMode: Bool {
+        switch self {
+        case .dance, .calisthenics: return true
+        case .water, .standSit, .walk: return false
+        }
+    }
+
+    /// Whether this category is currently active (respects coworking mode)
+    var isCurrentlyActive: Bool {
+        if isDisabledInCoworkingMode {
+            return !UserDefaults.standard.bool(forKey: "coworkingMode")
+        }
+        return true
+    }
+
     // Emoji for quick visual identification in the UI
     var emoji: String {
         switch self {
