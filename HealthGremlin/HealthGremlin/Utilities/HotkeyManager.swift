@@ -175,22 +175,22 @@ class HotkeyManager {
         case "stood":
             print("⌨️ Hotkey: Stood up")
             TimerCoordinator.shared.selfReport(category: .standSit)
-            showQuip()
+            if !TimerCoordinator.shared.isPaused { showQuip() }
 
         case "sat":
             print("⌨️ Hotkey: Sat down")
             TimerCoordinator.shared.selfReport(category: .standSit)
-            showQuip()
+            if !TimerCoordinator.shared.isPaused { showQuip() }
 
         case "water":
             print("⌨️ Hotkey: Drank water")
             TimerCoordinator.shared.selfReport(category: .water)
-            showQuip()
+            if !TimerCoordinator.shared.isPaused { showQuip() }
 
         case "walked":
             print("⌨️ Hotkey: Walked/moved")
             TimerCoordinator.shared.selfReport(category: .walk)
-            showQuip()
+            if !TimerCoordinator.shared.isPaused { showQuip() }
 
         case "pauseResume":
             print("⌨️ Hotkey: Pause/Resume")

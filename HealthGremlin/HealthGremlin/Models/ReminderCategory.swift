@@ -74,6 +74,19 @@ enum ReminderCategory: String, CaseIterable, Identifiable {
         return true
     }
 
+    /// Other categories that are implicitly satisfied when this one is done.
+    /// E.g., dancing means you stood up and moved, so stand/sit and walk
+    /// don't need to fire again soon.
+    var alsoSatisfies: [ReminderCategory] {
+        switch self {
+        case .dance:        return [.standSit, .walk]
+        case .calisthenics: return [.standSit, .walk]
+        case .walk:         return [.standSit]
+        case .standSit:     return []
+        case .water:        return []
+        }
+    }
+
     // Emoji for quick visual identification in the UI
     var emoji: String {
         switch self {

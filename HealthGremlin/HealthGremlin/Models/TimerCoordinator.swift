@@ -106,6 +106,10 @@ class TimerCoordinator: ObservableObject {
         graceTimer = Timer.scheduledTimer(withTimeInterval: scaled(gracePeriodSeconds), repeats: false) { [weak self] _ in
             guard let self = self else { return }
             self.inGracePeriod = false
+            guard !self.isPaused else {
+                print("⏱ TimerCoordinator: Grace period over but paused — waiting for resume")
+                return
+            }
             print("⏱ TimerCoordinator: Grace period over. Starting all timers.")
             self.startAllCategoryTimers()
         }
@@ -160,12 +164,11 @@ class TimerCoordinator: ObservableObject {
     /// Called when a category's timer fires. Checks for minimum gap,
     /// then shows the reminder via WindowManager.
     private func fireReminder(for category: ReminderCategory) {
-        guard category.isCurrentlyActive else { return }
         guard !isPaused else {
-            // If paused, reschedule for later
-            scheduleTimer(for: category)
+            print("⏱ \(category.rawValue): Fired while paused — ignoring")
             return
         }
+        guard category.isCurrentlyActive else { return }
 
         // Check minimum gap — don't pile reminders on top of each other
         if let lastTime = lastReminderTime {
@@ -179,7 +182,8 @@ class TimerCoordinator: ObservableObject {
                     withTimeInterval: delay,
                     repeats: false
                 ) { [weak self] _ in
-                    self?.fireReminder(for: category)
+                    guard let self = self, !self.isPaused else { return }
+                    self.fireReminder(for: category)
                 }
                 return
             }
@@ -195,8 +199,15 @@ class TimerCoordinator: ObservableObject {
                 withTimeInterval: retryDelay,
                 repeats: false
             ) { [weak self] _ in
-                self?.fireReminder(for: category)
+                guard let self = self, !self.isPaused else { return }
+                self.fireReminder(for: category)
             }
+            return
+        }
+
+        // Final pause check before showing (belt-and-suspenders)
+        guard !isPaused else {
+            print("⏱ \(category.rawValue): Pause detected at show time — aborting")
             return
         }
 
@@ -232,7 +243,8 @@ class TimerCoordinator: ObservableObject {
 
     // MARK: - Button handlers
 
-    /// Called when user hits "I did the thing" — resets escalation and timer
+    /// Called when user hits "I did the thing" — resets escalation and timer.
+    /// Also resets related categories (e.g., dancing satisfies stand/sit and walk).
     func handleAcknowledge(for category: ReminderCategory) {
         print("✅ \(category.rawValue): Acknowledged! Resetting to Tier 1.")
 
@@ -248,6 +260,13 @@ class TimerCoordinator: ObservableObject {
 
         // Restart the timer for this category (full interval)
         scheduleTimer(for: category)
+
+        // Reset related categories too — e.g., dancing means you stood and moved
+        for related in category.alsoSatisfies {
+            escalationTiers[related] = .jarvis
+            scheduleTimer(for: related)
+            print("   ↳ Also reset \(related.rawValue) timer")
+        }
     }
 
     /// Called when user hits "Delay" — advances escalation, snoozes for 5 min
@@ -267,6 +286,12 @@ class TimerCoordinator: ObservableObject {
         // Clear active category
         activeCategory = nil
 
+        // Don't schedule snooze if paused
+        guard !isPaused else {
+            print("⏱ \(category.rawValue): Paused — skipping snooze timer")
+            return
+        }
+
         // Schedule snooze timer (fires again in 5 minutes at the higher tier)
         // Uses scaledInteraction so snooze isn't absurdly fast in debug mode
         categoryTimers[category]?.invalidate()
@@ -274,7 +299,8 @@ class TimerCoordinator: ObservableObject {
             withTimeInterval: scaledInteraction(snoozeSeconds),
             repeats: false
         ) { [weak self] _ in
-            self?.fireReminder(for: category)
+            guard let self = self, !self.isPaused else { return }
+            self.fireReminder(for: category)
         }
     }
 
@@ -291,8 +317,9 @@ class TimerCoordinator: ObservableObject {
         ) { [weak self] _ in
             guard let self = self else { return }
 
-            // Don't auto-dismiss during demo mode
+            // Don't auto-dismiss during demo mode or while paused
             guard !self.inDemoMode else { return }
+            guard !self.isPaused else { return }
 
             print("⏱ \(category.rawValue): Auto-dismissed after 3 minutes (counts as ignored)")
 
@@ -312,7 +339,8 @@ class TimerCoordinator: ObservableObject {
     func pause(forDuration duration: TimeInterval? = nil) {
         isPaused = true
 
-        // Cancel all timers
+        // Cancel all timers — belt-and-suspenders: count what we're cancelling
+        let timerCount = categoryTimers.count
         for (_, timer) in categoryTimers {
             timer.invalidate()
         }
@@ -334,12 +362,13 @@ class TimerCoordinator: ObservableObject {
                 withTimeInterval: duration,
                 repeats: false
             ) { [weak self] _ in
+                print("⏸ Timed pause expired — auto-resuming")
                 self?.resume()
             }
             let minutes = Int(duration / 60)
-            print("⏸ All reminders paused for \(minutes) minutes")
+            print("⏸ PAUSED for \(minutes) minutes (cancelled \(timerCount) timers)")
         } else {
-            print("⏸ All reminders paused (until manually resumed)")
+            print("⏸ PAUSED until manually resumed (cancelled \(timerCount) timers)")
         }
     }
 
@@ -350,21 +379,30 @@ class TimerCoordinator: ObservableObject {
         pauseResumeTimer?.invalidate()
         pauseResumeTimer = nil
         startAllCategoryTimers()
-        print("▶️ All reminders resumed")
+        print("▶️ RESUMED — all category timers restarted")
     }
 
     // MARK: - Self-reporting (keyboard shortcuts)
 
     /// Called when the user proactively reports an activity via keyboard shortcut.
     /// Resets the timer and escalation for the relevant category.
+    /// Also resets related categories (e.g., walking satisfies stand/sit).
+    /// If paused, still resets escalation but doesn't schedule a new timer.
     func selfReport(category: ReminderCategory) {
-        print("🎯 Self-reported: \(category.rawValue)")
+        print("🎯 Self-reported: \(category.rawValue)\(isPaused ? " (paused — timer not restarted)" : "")")
 
         // Reset escalation to Tier 1
         escalationTiers[category] = .jarvis
 
-        // Restart the timer with a full interval
+        // Restart the timer with a full interval (scheduleTimer checks isPaused)
         scheduleTimer(for: category)
+
+        // Reset related categories too
+        for related in category.alsoSatisfies {
+            escalationTiers[related] = .jarvis
+            scheduleTimer(for: related)
+            print("   ↳ Also reset \(related.rawValue) timer")
+        }
     }
 
     // MARK: - Coworking Mode
