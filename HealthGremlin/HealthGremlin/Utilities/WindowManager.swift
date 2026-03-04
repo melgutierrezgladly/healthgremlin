@@ -12,9 +12,28 @@ import AppKit
 // - Visible on ALL desktops/Spaces (so it follows you around)
 // - Click-through for the background (only buttons are interactive)
 
+// MARK: - ClickThroughPanel
+// Custom NSPanel subclass that properly handles mouse events.
+// Without this, .nonactivatingPanel + .borderless panels can
+// swallow the first click (macOS uses it to focus the panel
+// instead of delivering it to the button).
+
+class ClickThroughPanel: NSPanel {
+    // Tell macOS this panel CAN become key (receive focus + clicks)
+    override var canBecomeKey: Bool { true }
+}
+
+// MARK: - ClickThroughHostingView
+// Custom NSHostingView that ensures mouse events pass through
+// to SwiftUI buttons on the first click, even in a non-activating panel.
+
+class ClickThroughHostingView<Content: View>: NSHostingView<Content> {
+    override func acceptsFirstMouse(for event: NSEvent?) -> Bool { true }
+}
+
 class WindowManager: ObservableObject {
     // The floating panel that holds our gremlin character
-    private var panel: NSPanel?
+    private var panel: ClickThroughPanel?
 
     // Published so SwiftUI views can react to show/hide state
     @Published var isShowingReminder = false
@@ -123,7 +142,7 @@ class WindowManager: ObservableObject {
         // - .nonactivatingPanel: won't steal focus from your current app
         // - .borderless: no title bar or window chrome
         // - .hudWindow: gives it a floating utility window appearance
-        let panel = NSPanel(
+        let panel = ClickThroughPanel(
             contentRect: panelRect,
             styleMask: [.borderless, .nonactivatingPanel, .hudWindow],
             backing: .buffered,
@@ -145,10 +164,6 @@ class WindowManager: ObservableObject {
         // Don't show in the Window menu or Mission Control
         panel.hidesOnDeactivate = false
         panel.isExcludedFromWindowsMenu = true
-
-        // Allow the panel to become key (receive clicks) even though
-        // it's non-activating (won't steal focus from other apps)
-        panel.becomesKeyOnlyIfNeeded = true
 
         // Store reference
         self.panel = panel
@@ -192,9 +207,9 @@ class WindowManager: ObservableObject {
         guard let panel = self.panel else { return }
 
         // Create our SwiftUI view and host it in the panel.
-        // NSHostingView bridges SwiftUI into an AppKit window.
+        // ClickThroughHostingView ensures first-click mouse events reach SwiftUI buttons.
         let contentView = ReminderOverlayView(windowManager: self)
-        let hostingView = NSHostingView(rootView: contentView)
+        let hostingView = ClickThroughHostingView(rootView: contentView)
 
         // Make the hosting view's background transparent
         hostingView.layer?.backgroundColor = .clear
